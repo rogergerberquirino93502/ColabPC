@@ -1,0 +1,28 @@
+<div class="container p-4">
+    <div class="row">
+        {{#each links}}
+            <div class="col-md-3">
+                <div class="card text-center bg-secondary border-dark">
+                    <div class="card-body w-1">
+                        <i class="fas fa-mug-hot"></i>
+                        <a>
+                            {{nombre}}
+                        </a>
+                            <h4 class="card-title text-uppercase">
+                            Descripcion: {{descripcion}}
+                            </h4>
+                            <p class="m-2">Q.{{precio}}</p>
+                            <a href="#" class="btn btn-success"><i class="fas fa-shopping-cart"></i></a>
+                    </div>
+                </div>
+            </div>
+            {{else}}
+            <div class="col-md-4 mx-auto">
+                <div class="card card-body text-center">
+                    <p>No hay nada en venta</p>
+                    <a href="/cliente/vista2">Agregar Menu</a>
+                </div>
+            </div>
+        {{/each}}
+    </div>
+</div>

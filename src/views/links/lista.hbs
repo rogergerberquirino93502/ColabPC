@@ -1,0 +1,37 @@
+<style type="text/css">
+    div {margin-top: 0px; margin-bottom: 5px; !important}
+</style> 
+<div class="container p-6">
+    <a href="/links/add" class="fa fa-plus" focusable="false">
+    Agregar
+    </a>
+</div>
+<div class="container p-4">
+    <div class="row">
+        {{#each links}}
+            <div class="col-md-3">
+                <div class="card text-center bg-secondary border-dark">
+                    <div class="card-body w-1">
+                        <i class="fas fa-mug-hot"></i>
+                        <a>
+                            Codigo Producto:{{COD_PRODUCTO}}
+                        </a>
+                            <h3 class="card-title text-uppercase">
+                            Nombre Producto: {{NOM_PRODUCTO}}
+                            </h3>
+                            <p class="m-2">Proveedor: {{COD_PROVEEDOR}}</p>
+                            <a href="/links/delete/{{ID_PRODUCTO}}" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a>
+                            <a href="/links/edit/{{ID_PRODUCTO}}" class="btn btn-success"><i class="fas fa-edit"></i></a>
+                    </div>
+                </div>
+            </div>
+            {{else}}
+            <div class="col-md-4 mx-auto">
+                <div class="card card-body text-center bg-secondary">
+                    <p>No hay Productos en Existencias</p>
+                    <a href="/links/add">Agrega Productos</a>
+                </div>
+            </div>
+        {{/each}}
+    </div>
+</div>
