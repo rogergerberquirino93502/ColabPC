@@ -1,5 +1,5 @@
-# Proyecto Colab
- Aplicacion con NodeJS, Mysql.
+# Proyecto Colab / Coffee Shop
+ Aplicacion NodeJS, Mysql.
  
  CRUD Completo. 
  
