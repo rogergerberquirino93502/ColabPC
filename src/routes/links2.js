@@ -9,7 +9,7 @@ router.get('/add2', isLoggedIn,(req, res) =>{
     res.render('links2/add2');
 });
 
-router.post('/add2', isLoggedIn ,async (req, res) =>{
+router.post('/add2', isLoggedIn, async (req, res) =>{
     const{ COD_PROVEEDOR, NOM_PROVEEDOR} = req.body;
     const newLink = {
         COD_PROVEEDOR,

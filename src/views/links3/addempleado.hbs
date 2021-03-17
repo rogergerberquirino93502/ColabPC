@@ -1,0 +1,29 @@
+<div class="container p-4">
+    <div class="row">
+        <div class="col-md-4 mx-auto">
+            <div class="card">
+                <div class="card-body">
+                    <form action="/links3/addempleado" method="POST" >
+                   
+                        <div class="form-group">
+                     <input type="text" class="form-control" name="nombreempleado" placeholder="Nombre" autofocus>
+                    </div>
+                        <div class="form-group">           
+                        <select name="id_puesto" id="id_puesto" class="form-select" aria-label="Default select example">
+                        {{#each empleado1}}
+                        <option value="{{id_puesto}}">{{nombrepuesto}}</option>
+                        {{else}}
+                        {{/each}}
+                        </select>
+                     </div>
+                       <div class="form-group">
+                            <button class="btn btn-success btn-block">
+                                Save
+                            </button>
+                        </div>         
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

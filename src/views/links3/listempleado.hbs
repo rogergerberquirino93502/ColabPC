@@ -1,0 +1,23 @@
+<div class="container p-4">
+    <div class="row">
+        {{#each links}}
+           <div class="col-md-3">
+                    <div class="card text-center bg-secondary border-dark">
+                        <div class="card-body">                        
+                            <h2> {{nombreempleado}}</h2>                    
+                           <h2> {{nombrepuesto}}</h2>   
+                            <a href="/links3/deleteempleado/{{id_empleado}}" class="btn btn-danger">delete </a>
+                            <a href="/links3/editempleado/{{id_empleado}}" class="btn btn-secondary">edit</a>                        
+                        </div>
+                    </div>
+            </div>
+                {{else}}
+                <div class="col-md-4 mx-auto">
+                    <div class="card card-body text-center">
+                        <p>NO HAY LINKS GUARDADOS AUN</p>
+                        <a href="/links3/addempleado">CREA UNO</a>
+                    </div>
+                </div>
+            {{/each}}
+    </div>
+</div>
