@@ -1,5 +1,7 @@
 # Proyecto Colab
- Aplicacion realizada con NodeJS, Mysql, JavaScript. 
+ Aplicacion con NodeJS, Mysql.
+ 
+ CRUD Completo. 
  
  Hace uso de Handlebars, sistema de plantillas Javascript basado en Mustache Templates. 
  Handlebars sirve para generar HTML a partir de objetos con datos en formato JSON.
