@@ -6,3 +6,6 @@
  
  GRUPO #3
  
+Pantalla Principal. 
+ 
+![imagen](https://user-images.githubusercontent.com/42680508/111396728-503ed700-8685-11eb-9dae-4065d6e67237.png)
