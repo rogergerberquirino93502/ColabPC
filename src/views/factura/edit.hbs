@@ -1,0 +1,293 @@
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>factura</title>
+    
+    <style>
+        
+       
+
+
+    body {background-color: rgb(221, 213, 213);}
+    .invoice-box {
+        max-width: 650px;
+        margin: auto;
+        padding: 30px;
+        border: 1px solid rgba(238, 238, 238, 0.575);
+        box-shadow: 0 0 10px rgba(0, 0, 0, .15);
+        font-size: 16px;
+        line-height: 24px;
+        font-family: Monospace;
+        
+       
+  
+      
+        color: #000000da;
+        background-color: rgb(255, 255, 255);
+  background-image: url("cafe.jpg");
+  background-image: center;
+  background-image: no-repeat;
+background-image: fixed;
+
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: cover;
+
+
+    
+    }
+    
+    .invoice-box table {
+        
+        width: 100%;
+        line-height: inherit;
+        text-align: left;
+    }
+    
+    .invoice-box table td {
+        padding: 5px;
+        vertical-align: top;
+    }
+    
+    .invoice-box table tr td:nth-child(2) {
+        text-align: right;
+    }
+    
+    .invoice-box table tr.top table td {
+        padding-bottom: 20px;
+    }
+    
+    .invoice-box table tr.top table td.title {
+        font-size: 45px;
+        line-height: 45px;
+        color: rgb(145, 3, 180);
+    }
+    
+    .invoice-box table tr.information table td {
+        padding-bottom: 40px;
+    }
+    
+    .invoice-box table tr.heading td {
+        background: rgba(138, 138, 138, 0.575);
+        border-bottom: 1px solid rgba(238, 238, 238, 0.575);
+        font-weight: bold;
+    }
+    
+    .invoice-box table tr.details td {
+        padding-bottom: 20px;
+    }
+    
+    .invoice-box table tr.item td{
+        border-bottom: 1px solid rgba(238, 238, 238, 0.575);
+    }
+    
+    .invoice-box table tr.item.last td {
+        border-bottom: none;
+    }
+    
+    .invoice-box table tr.total td:nth-child(2) {
+        border-top: 2px solid rgba(238, 238, 238, 0.575);
+        font-weight: bold;
+    }
+    
+    @media only screen and (max-width: 600px) {
+        .invoice-box table tr.top table td {
+            width: 100%;
+            display: block;
+            text-align: center;
+        }
+        
+        .invoice-box table tr.information table td {
+            width: 100%;
+            display: block;
+            text-align: center;
+        }
+    }
+    
+    /** RTL **/
+    .rtl {
+        direction: rtl;
+        font-family: Tahoma, 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;
+    }
+    
+    .rtl table {
+        text-align: right;
+    }
+    
+    .rtl table tr td:nth-child(2) {
+        text-align: left;
+    }
+
+
+    
+
+    </style>
+</head>
+
+<body>
+    <div class="invoice-box">
+        <table cellpadding="0" cellspacing="0">
+            <tr class="top">
+                <td colspan="2">
+                    <table>
+                        <tr>
+                            <td class="title">
+                                <img src="logo.png" style="width:100%; max-width:200px;">
+                            </td>
+                            
+                            <td>
+                                NO. 0000<br>
+                                FECHA: January 1, 9999<br>
+                                hora
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            
+            <tr class="information">
+                <td colspan="2">
+                    <table>
+                        <tr>
+                            <td>
+                                cafesito, s.a<br>
+                                Telefono<br>
+                                direccion
+                            </td>
+                            
+                            <td>
+                                Contactos.<br>
+                                #####<br>
+                                ###@###.com
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            
+            
+            <tr class="heading">
+                <td>
+                    DATOS CLIENTE
+                </td>
+                
+                <td>
+                    
+                </td>
+            </tr>
+            <tr class="details">
+                <td>
+                    nombre {{fac.nombres}} {{fac.apellidos}}
+                    
+                    
+                </td>                
+            </tr>
+            <tr class="details">
+                <td>
+                    Direccion {{fac.ciudad}}
+                    
+                </td>                
+            </tr>
+            <tr class="details">
+                <td>
+                    NIT: {{fac.nit}}
+                </td>                
+            </tr>
+            <tr class="heading">
+                <td>
+                    METODO DE PAGO
+                </td>
+                
+                <td>
+                    XXXXX #
+                </td>
+            </tr>
+            
+            <tr class="details">
+                <td>
+                    ###
+                </td>
+                
+                <td>
+                    1000
+                </td>
+            </tr>
+            
+            <tr class="heading">
+                <td>
+                    PRODUCTO
+                </td>
+                
+                <td>
+                    PRECIO
+                </td>
+            </tr>
+            
+            
+
+
+                 {{#each pro}}
+                     
+<tr class="item"></tr>
+                     <td>{{nombre}}
+                </td>
+                
+                <td>
+                    {{precio}}
+                </td>
+                </tr>
+                    {{else}}
+                    {{/each}}
+
+               
+            
+            
+        
+            
+            
+            
+            <tr class="total">
+                <td></td>
+                
+                <td>
+                   Total: {{#each sum}}{{suma}}{{else}}{{/each}}
+                </td>
+            </tr>
+        </table>
+    </div>
+     nombre {{fact.nombres}} {{fact.apellidos}}
+                    {{#each fact}}
+                    nombre {{nombres}} {{apellidos}}
+                    {{else}}
+                    {{/each}}
+
+</body>
+</html>
+
+
+
+
+                
+                    <form action="/factura/edit/{{link.id_puesto}}" method="POST" >
+                    <div class="form-group">
+
+
+                     <input type="text" value="{{link.nombrepuesto}}" class="form-control" name="nombrepuesto" placeholder="puesto" autofocus>
+                    </div>
+                    
+                    
+
+                    <div class="form-group">
+                            <button class="btn btn-success btn-block">
+                                Save
+                            </button>
+                        </div>
+
+                        
+                    </form>
+                
+         
+

@@ -1,0 +1,43 @@
+<style type="text/css">
+    div {margin-top: 0px; margin-bottom: 5px; !important}
+</style> 
+<div class="container p-6">
+    <a href="/clientes/add" class="fa fa-plus" focusable="false">
+    Agregar
+    </a>
+</div>
+<div class="container p-4">
+    <div class="row">
+        {{#each links}}
+            <div class="col-md-3">
+                <div class="card text-center bg-secondary border-dark">
+                    <div class="card-body w-1">
+                        <i class="fas fa-mug-hot"></i>
+                        <a>
+                            Id Cliente:{{id_cliente}}
+                        </a>
+                        <a>
+                            Nombres:{{nombres}}
+                        </a>
+                            <h3 class="card-title text-uppercase">
+                            Apellido: {{apellidos}}
+                            </h3>
+                            <h3 class="card-title text-uppercase">
+                            Nit: {{nit}}
+                            </h3>
+                            <p class="m-2">Ciudad: {{ciudad}}</p>
+                            <a href="/clientes/delete/{{id_cliente}}" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a>
+                            <a href="/clientes/edit/{{id_cliente}}" class="btn btn-success"><i class="fas fa-edit"></i></a>
+                    </div>
+                </div>
+            </div>
+            {{else}}
+            <div class="col-md-4 mx-auto">
+                <div class="card card-body text-center bg-secondary">
+                    <p>No hay Productos en Existencias</p>
+                    <a href="/clientes/add">Agregar Clientes</a>
+                </div>
+            </div>
+        {{/each}}
+    </div>
+</div>

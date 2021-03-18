@@ -1,0 +1,179 @@
+<!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  Launch demo modal
+</button>
+
+Modal 
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+<script>var myModal = document.getElementById('myModal')
+var myInput = document.getElementById('myInput')
+
+myModal.addEventListener('shown.bs.modal', function () {
+  myInput.focus()
+})
+
+$('#myModal').on('shown.bs.modal', function () {
+  $('#myInput').trigger('focus')
+})
+
+</script> 
+-->
+
+
+
+<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#modal_producto">Nuevo</button>
+    <!-- Modal -->
+<div id="modal_producto" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" >&times;</button>
+        <h3 class="modal-title">Producto</h3>
+      </div>
+      <div class="modal-body">    
+        <form action="/factura/add" class="form-horizontal" method="post" >
+                <div class="form-group">
+                    <!--<input type="text" class="form-control"  id="txtid" name="txtid" value="0" placeholder="id" readonly>    -->
+                    
+                     
+                  <select name="id_cliente" id="id_cliente" class="form-select" aria-label="Default select example">
+                      <option value="0">Ingrese cliente</option>
+                      {{#each empleado2}}
+ <option value="{{id_cliente}}">{{nombres}} {{apellidos}}</option>
+{{else}}
+
+{{/each}}
+</select>
+
+
+
+
+                     <select name="id_empleado" id="id_empleado" class="form-select" aria-label="Default select example">
+                      <option value="0">Ingrese Empleado</option>
+                      {{#each empleado3}}
+ <option value="{{id_empleado}}">{{nombreempleado}}</option>
+{{else}}
+
+{{/each}}
+</select>
+                      
+                      <select name="id_menu" id="id_menu" class="form-select" aria-label="Default select example">
+                      <option value="0">Ingrese Plato</option>
+                      {{#each empleado1}}
+ <option value="{{id_menu}}">{{nombre}}</option>
+{{else}}
+
+{{/each}}
+</select>
+
+
+                      <input type="text" class="form-control" name="no_orden" placeholder="Orden" required>
+                      <input type="text" class="form-control"  name="total" placeholder="Total" required>
+                      <input type="text" class="form-control"  name="cantidad" placeholder="Cantidad" required>
+                      <input type="date" class="form-control"  name="fecha" placeholder="" required>      
+                      
+
+
+
+                        
+<!--                          <label for="imagen">Insertar URL Imágen</label>
+              
+                     <input type="file"  value="" name="archivo" id="archivo"/>-->
+                     <!--                   <input type ='button'  class="btn btn-info btn-lg" style="background:blue" value = 'Subir' target="_blank" onclick= " window.open('up.jsp','Imagen' ,'width=400 , height=100, top=300, left=500');" />-->
+                        
+                        
+                        
+                        
+                       <!-- <input name="archivo1" type="file" id="archivo1"><br/>-->
+                       
+                        
+                       
+                        
+
+                        <input type="submit" id="btnAgregar" name="btnAgregar" value="Agregar" class="btn btn-info btn-lg" >
+                     <!--    <input type="submit" id="btnModificar" name="btnModificar" value="Modificar" class="btn btn-primary  btn-lg" >
+                        <input type="submit" id="btnEliminar" name ="btnEliminar" value="Eliminar" onclick="javascript:if(!confirm('¿Desea Eliminar?'))return false" class="btn btn-danger btn-lg" >-->
+                </div>
+        </form>
+                        
+     
+                        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger"    data-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<div class="container p-4">
+    <div class="row">
+
+
+<table class="table" border="1">
+		<tr>
+			<th>Cliente</th>
+            <th>Empleado</th>
+            <th>Menu</th>
+            <th>0rden</th>
+			<th>total</th>
+		</tr>
+        </table>    
+{{#each links}}
+<table class="table" border="1">
+		<tr>
+			<td>{{id_cliente}}{{nombres}}{{apellidos}}</td>
+            <td>{{id_empleado}}{{nombreempleado}}</td>
+            <td>{{id_menu}}{{nombre}}</td>
+            <td>{{no_orden}}</td>
+			<td>{{total}}</td>
+		</tr>
+		</table>
+            {{!--this--}}
+                
+                
+                <div class="col-md-3">
+
+                        <!--<p class="m-2">{{description}}</p>
+                        <p>{{timeago created_at}}</p>-->
+                        <a href="/factura/delete/{{id_factura}}" class="btn btn-danger">delete link</a>
+                       <!--  <a href="/links/edit/{{id_factura}}:{{id_cliente}}" class="btn btn-secondary">edit</a>-->
+                            <a href="/factura/edit/{{id_cliente}}" class="btn btn-secondary">Facturar</a>
+                        
+                </div>
+
+
+                {{else}}
+                <div class="col-md-4 mx-auto">
+
+                    <div class="card card-body text-center">
+                        <p>NN</p>
+                        <a href="/factura">CREA UNO</a>
+                    </div>
+                </div>
+
+            {{/each}}
+
+    </div>
+</div>
+
+
+
