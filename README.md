@@ -1,5 +1,4 @@
 # Proyecto Colab / Coffee Shop
-Nombres: 
  Aplicacion NodeJS, Mysql.
  
  CRUD Completo. 
@@ -17,7 +16,7 @@ Menu para la Administración y Mantenimiento de la Aplicacion
 ![imagen](https://user-images.githubusercontent.com/42680508/111578418-ba38a880-8779-11eb-8449-6da9464c33a0.png)
 Generación de Facturas
 ![imagen](https://user-images.githubusercontent.com/42680508/111716547-e0168980-881b-11eb-8422-99e5fa2c54e1.png)
-Base de Datos
+Bases de Datos
 ![imagen](https://user-images.githubusercontent.com/42680508/111716696-31bf1400-881c-11eb-8ffa-1eef5b959f2b.png)
 
 
